@@ -15,7 +15,7 @@ function atcmd(cmd, timeout) {
         return callback;
       }
     }
-    at.cmd(cmd + '\r\n', timeout || 1000, callback);
+    at.cmd(cmd + '\r\n', timeout || 5000, callback);
   });
 }
 
