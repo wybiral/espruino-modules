@@ -48,33 +48,25 @@ function receive(line) {
 }
 
 function setParameter(options) {
-  return new Promise((resolve, reject) => {
-    options = options || {};
-    let params = '';
-    params += (options.spreadingFactor || 12) + ',';
-    params += (options.bandwidth || 7) + ',';
-    params += (options.codingRate || 1) + ',';
-    params += (options.preamble || 4);
-    return atcmd('AT+PARAMETER=' + params);
-  });
+  options = options || {};
+  let params = '';
+  params += (options.spreadingFactor || 12) + ',';
+  params += (options.bandwidth || 7) + ',';
+  params += (options.codingRate || 1) + ',';
+  params += (options.preamble || 4);
+  return atcmd('AT+PARAMETER=' + params);
 }
 
 function setBand(band) {
-  return new Promise((resolve, reject) => {
-    return atcmd('AT+BAND=' + band);
-  });
+  return atcmd('AT+BAND=' + band);
 }
 
 function setAddress(address) {
-  return new Promise((resolve, reject) => {
-    return atcmd('AT+ADDRESS=' + address);
-  });
+  return atcmd('AT+ADDRESS=' + address);
 }
 
 function setNetworkID(networkID) {
-  return new Promise((resolve, reject) => {
-    return atcmd('AT+NETWORKID=' + networkID);
-  });
+  return atcmd('AT+NETWORKID=' + networkID);
 }
 
 function send(data, addr) {
