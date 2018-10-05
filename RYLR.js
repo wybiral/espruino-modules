@@ -3,7 +3,7 @@ let at = null;
 function atcmd(cmd, timeout) {
   return new Promise((resolve, reject) => {
     let data = '';
-    function callback(d) {
+    at.cmd(cmd + '\r\n', timeout || 5000, function callback(d) {
       if (d === undefined) {
         reject(cmd + ': TIMEOUT');
       } else if (d == '+OK') {
@@ -14,8 +14,7 @@ function atcmd(cmd, timeout) {
         data += (data ? '\n' : '') + d;
         return callback;
       }
-    }
-    at.cmd(cmd + '\r\n', timeout || 5000, callback);
+    });
   });
 }
 
