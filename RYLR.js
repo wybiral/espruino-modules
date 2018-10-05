@@ -49,9 +49,7 @@ exports.connect = function(usart, options, callback) {
     const rssi = parseInt(line.slice(0, idx));
     line = line.slice(idx + 1);
     // Parse SNR
-    idx = line.indexOf(',');
-    const snr = parseInt(line.slice(0, idx));
-    line = line.slice(idx + 1);
+    const snr = parseInt(line);
     rylrFuncs.emit('data', {
       addr: addr,
       data: data,
