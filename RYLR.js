@@ -7,7 +7,7 @@ class RYLR {
   */
   constructor(usart) {
     this.at = require('AT').connect(usart);
-    this.at.registerLine('+RCV', this._receive);
+    this.at.registerLine('+RCV', this._receive.bind(this));
   }
 
   /*
