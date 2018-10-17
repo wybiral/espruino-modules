@@ -1,5 +1,8 @@
 /*
   Espruino JS wrapper for REYAX RYLR LoRa modules.
+
+  UPDATE: This module is now included in the Espruino module collection: http://www.espruino.com/RYLR
+  You should use the version there instead of this one because this will no longer be maintained.
 */
 class RYLR {
   /*
